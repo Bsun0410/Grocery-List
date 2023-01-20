@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<center>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Shopping List</title>
+    <script type="text/javascript" src="groceryList.js"></script>
+    <link rel="stylesheet" type="text/css" href="list.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Shopping List</h1>
+    <div id="video-container">
+      <video width="320" height="240" controls>
+        <source src="grocery_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <form>
+      <label>
+        <input type="text" id="addItem" name="Add Item" size="20" maxlength="20" value=" ">
+        <button type="button" onclick="addNeed();" name="Need">Need</button>
+        <button type="button" onclick="addHave();" name="Have">Want to Have</button>
+      </label>
+    </form>
+
+    <h2> Need: </h2>
+    <ul id='needList' class='list'>
+    </ul>
+    <h2> Have: </h2>
+    <ul id='haveList' class='list'>
+    </ul>
+
+    <script>
+      // used for drag animation
+      const dragArea = document.querySelector(".list");
+      new Sortable(dragArea, {
+        animation: 350
+      });
+
+      // deletes certain option once delete is selected
+      // arrow function used to make it more concise
+      function deleteItem(event, list) {
+        if (event.target.tagName === 'A') {
+          const itemValue = event.target.previousElementSibling.textContent;
+          event.target.parentElement.remove();
+          list.splice(list.indexOf(itemValue), 1);
+        }
+      }
+      document.getElementById("needList").addEventListener("click", (event) => deleteItem(event, needList));
+      document.getElementById("haveList").addEventListener("click", (event) => deleteItem(event, haveList));
+
+
+    </script>
+</center>
+
+</body>
+
+</html>

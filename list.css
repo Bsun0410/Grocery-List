@@ -1,0 +1,92 @@
+/*sets the background like the Apple notes app and uses the font Helvetica*/
+body {
+  background-image: url('linedpaper/appleNotes.jpg');
+  width: 600px;
+  margin: 0 auto;
+  padding: 10%;
+  font-family: Helvetica;
+}
+
+/*color of "Add Item: " */
+form {
+  color: #daad27;
+  font-size: 22px;
+}
+
+
+input[type="text"]{
+  background-color : #f8f8f8;;
+}
+
+#addNeed {
+  background-color : #f8f8f8;
+  color: #daad27;
+}
+
+#addHave {
+  background-color : #f8f8f8;
+  color: #daad27;
+}
+
+
+/*color of "Shopping List:" "*/
+h1 {
+  color: #daad27;
+  font-size: 50px;
+}
+
+/*color of "Need: " and "Have: "*/
+h2 {
+  color: #daad27;
+  font-size: 42px;
+  letter-spacing: -2px;
+  text-align: left;
+}
+
+/*color and design of the items in the checklist*/
+/*css grid utilized*/
+.list {
+  color: #555;
+  font-size: 20px;
+  padding: 0 !important;
+  display: grid;
+  grid-template-rows: repeat(1, 0.5fr);
+  border: 1px solid forestgreen;
+}
+
+/*left bound*/
+.list input{
+  float: left;
+}
+
+/*capitalized the item of the list regardless of user input; side and layout*/
+.list li {
+  list-style: none;
+  background-color : #f8f8f8;
+  border-bottom: 1px dotted #ccc;
+  text-indent: 25px;
+  height: auto;
+  padding: 10px;
+  text-transform: capitalize;
+  color:#daad27;
+}
+
+/* Drag and Delete buttons to the right*/
+li a {
+  float: right;
+  text-decoration: underline;
+  color:#daad27;
+}
+
+	body {
+		background-image: url('linedpaper/appleNotes.jpg');
+	}
+
+#video-container {
+  width: 100%;
+  text-align: center;
+}
+
+video {
+  max-width: 100%;
+}
